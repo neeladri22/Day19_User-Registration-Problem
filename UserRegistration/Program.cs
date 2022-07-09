@@ -21,7 +21,10 @@ namespace UserRegistration
             //ValidateLastName();
 
             // Validate for Email
-            ValidateEmail();
+            //ValidateEmail();
+
+            // Validate for Email
+            ValidateMobileNumber();
 
         }
         /*
@@ -64,8 +67,7 @@ namespace UserRegistration
             }
             Console.ReadLine();
         }
-        */
-
+       
         // Creating method for  Email validation
         public static void ValidateEmail()
         {
@@ -82,6 +84,27 @@ namespace UserRegistration
             else
             {
                 Console.WriteLine("The email is not validated");
+            }
+            Console.ReadLine();
+        }
+        */
+
+        // Creating method for  Mobile number validation
+        public static void ValidateMobileNumber()
+        {
+
+            Console.WriteLine("Enter the valid mobile number");
+            string email = Console.ReadLine();
+
+            var result = Regex.IsMatch(email, @"^[1-9]{2,}[\s][6-9]{1}[0-9]{9}$");
+
+            if (result)
+            {
+                Console.WriteLine("The entered mobile number is validated successfully");
+            }
+            else
+            {
+                Console.WriteLine("The mobile number is not validated");
             }
             Console.ReadLine();
         }
