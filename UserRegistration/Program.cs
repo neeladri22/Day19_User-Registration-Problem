@@ -18,7 +18,10 @@ namespace UserRegistration
             //ValidateFirstName();
 
             // Validation for Last Name
-            ValidateLastName();
+            //ValidateLastName();
+
+            // Validate for Email
+            ValidateEmail();
 
         }
         /*
@@ -40,8 +43,8 @@ namespace UserRegistration
             }
             Console.ReadLine();
         }
-        */
-
+        
+        // Creating method for  last name validation
         public static void ValidateLastName()
         {
 
@@ -58,6 +61,27 @@ namespace UserRegistration
             else
             {
                 Console.WriteLine("The Last name is not validated");
+            }
+            Console.ReadLine();
+        }
+        */
+
+        // Creating method for  Email validation
+        public static void ValidateEmail()
+        {
+
+            Console.WriteLine("Enter the valid email");
+            string email = Console.ReadLine();
+
+            var result = Regex.IsMatch(email, @"^([A-Za-z]{3,}([.a-z]*)[@][a-z]{2,}[.][a-z]{2,3}([.a-z]*))$");
+
+            if (result)
+            {
+                Console.WriteLine("The entered email is validated successfully");
+            }
+            else
+            {
+                Console.WriteLine("The email is not validated");
             }
             Console.ReadLine();
         }
