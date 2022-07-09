@@ -24,7 +24,10 @@ namespace UserRegistration
             //ValidateEmail();
 
             // Validate for Email
-            ValidateMobileNumber();
+            //ValidateMobileNumber();
+
+            // Validate for Password
+            ValidatePassword();
 
         }
         /*
@@ -87,8 +90,7 @@ namespace UserRegistration
             }
             Console.ReadLine();
         }
-        */
-
+       
         // Creating method for  Mobile number validation
         public static void ValidateMobileNumber()
         {
@@ -108,8 +110,28 @@ namespace UserRegistration
             }
             Console.ReadLine();
         }
+        */
+        // Creating method for valid Password (Min 8 Character)
+        public static void ValidatePassword()
+        {
+            Console.WriteLine("Password Should have min 8 Characters");
+            Console.WriteLine("Enter the password ");
+            string password = Console.ReadLine();
 
-       
+            var result = Regex.IsMatch(password, @"^[a-zA-Z]{8,}$");
+
+            if (result)
+            {
+                Console.WriteLine("The entered password is validated successfully");
+            }
+            else
+            {
+                Console.WriteLine("The password is not valid");
+            }
+            Console.ReadLine();
+        }
+
+
 
     }
 }
