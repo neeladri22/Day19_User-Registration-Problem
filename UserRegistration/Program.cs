@@ -33,7 +33,10 @@ namespace UserRegistration
             //ValidatePasswordWithOneUpperCase();
 
             // Validate for Password with one Upper case, one numeric and special character
-            ValidatePasswordWithOneUpperCaseAndOneNumericAndSpecialCharacter();
+            //ValidatePasswordWithOneUpperCaseAndOneNumericAndSpecialCharacter();
+
+            //Validate the sample email
+            ValidateSampleEmail();
 
         }
         /*
@@ -175,8 +178,7 @@ namespace UserRegistration
             }
             Console.ReadLine();
         }
-         */
-
+         
         // Creating method for valid Password (Min 8 Character and atleast one upper case,one Numeric and one special)
         public static void ValidatePasswordWithOneUpperCaseAndOneNumericAndSpecialCharacter()
         {
@@ -193,6 +195,27 @@ namespace UserRegistration
             else
             {
                 Console.WriteLine("The password is not valid");
+            }
+            Console.ReadLine();
+        }
+        */
+
+        // Creating Method for the valid sample email
+        public static void ValidateSampleEmail()
+        {
+            Console.WriteLine("Validate the sample email ");
+            Console.WriteLine("Enter the email ");
+            string emailValidate = Console.ReadLine();
+
+            var result = Regex.IsMatch(emailValidate, @"^([a-z]{3}([\.\+\-0-9]*)@[a-z0-9]{1,}.[a-z]{3,}[.a-z]*)");
+
+            if (result)
+            {
+                Console.WriteLine("The entered sample email is validated successfully");
+            }
+            else
+            {
+                Console.WriteLine("The sample email is not valid");
             }
             Console.ReadLine();
         }
