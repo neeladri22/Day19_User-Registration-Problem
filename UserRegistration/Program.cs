@@ -23,11 +23,14 @@ namespace UserRegistration
             // Validate for Email
             //ValidateEmail();
 
-            // Validate for Email
+            // Validate for mobile
             //ValidateMobileNumber();
 
             // Validate for Password
-            ValidatePassword();
+            //ValidatePassword();
+
+            // Validate for Password with Upper case
+            ValidatePasswordWithOneUpperCase();
 
         }
         /*
@@ -110,7 +113,6 @@ namespace UserRegistration
             }
             Console.ReadLine();
         }
-        */
         // Creating method for valid Password (Min 8 Character)
         public static void ValidatePassword()
         {
@@ -130,8 +132,27 @@ namespace UserRegistration
             }
             Console.ReadLine();
         }
+        */
 
+        // Creating method for valid Password (Min 8 Character and atleast one upper case)
+        public static void ValidatePasswordWithOneUpperCase()
+        {
+            Console.WriteLine("Password Should have min 8 Characters and atleast one upper case)");
+            Console.WriteLine("Enter the password ");
+            string password = Console.ReadLine();
 
+            var result = Regex.IsMatch(password, @"^(?=.*[A-Z])[a-zA-Z]{8,}$");
+
+            if (result)
+            {
+                Console.WriteLine("The entered password is validated successfully");
+            }
+            else
+            {
+                Console.WriteLine("The password is not valid");
+            }
+            Console.ReadLine();
+        }
 
     }
 }
