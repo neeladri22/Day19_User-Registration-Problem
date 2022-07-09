@@ -94,9 +94,9 @@ namespace UserRegistration
         {
 
             Console.WriteLine("Enter the valid mobile number");
-            string email = Console.ReadLine();
+            string mobileNo = Console.ReadLine();
 
-            var result = Regex.IsMatch(email, @"^[1-9]{2,}[\s][6-9]{1}[0-9]{9}$");
+            var result = Regex.IsMatch(mobileNo, @"^[1-9]{2,}[\s][6-9]{1}[0-9]{9}$");
 
             if (result)
             {
@@ -104,10 +104,12 @@ namespace UserRegistration
             }
             else
             {
-                Console.WriteLine("The mobile number is not validated");
+                Console.WriteLine("The mobile number is not valid");
             }
             Console.ReadLine();
         }
+
+       
 
     }
 }
