@@ -32,8 +32,8 @@ namespace UserRegistration
             // Validate for Password with Upper case
             //ValidatePasswordWithOneUpperCase();
 
-            // Validate for Password with one Upper case and one numeric
-            ValidatePasswordWithOneUpperCaseAndOneNumeric();
+            // Validate for Password with one Upper case, one numeric and special character
+            ValidatePasswordWithOneUpperCaseAndOneNumericAndSpecialCharacter();
 
         }
         /*
@@ -155,8 +155,7 @@ namespace UserRegistration
             }
             Console.ReadLine();
         }
-        */
-
+       
         // Creating method for valid Password (Min 8 Character and atleast one upper case one Numeric)
         public static void ValidatePasswordWithOneUpperCaseAndOneNumeric()
         {
@@ -165,6 +164,27 @@ namespace UserRegistration
             string password = Console.ReadLine();
 
             var result = Regex.IsMatch(password, @"^(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{8,}$");
+
+            if (result)
+            {
+                Console.WriteLine("The entered password is validated successfully");
+            }
+            else
+            {
+                Console.WriteLine("The password is not valid");
+            }
+            Console.ReadLine();
+        }
+         */
+
+        // Creating method for valid Password (Min 8 Character and atleast one upper case,one Numeric and one special)
+        public static void ValidatePasswordWithOneUpperCaseAndOneNumericAndSpecialCharacter()
+        {
+            Console.WriteLine("Password Should have min 8 Characters and atleast one upper case,one numeric and special character)");
+            Console.WriteLine("Enter the password ");
+            string password = Console.ReadLine();
+
+            var result = Regex.IsMatch(password, @"^(?=.*[A-Z])(?=.*[@#$!%^&-+=()])(?=.*[0-9])(?=.*[a-z]).{8,}$");
 
             if (result)
             {
